@@ -20,7 +20,7 @@ export default async function CalendarPage() {
   }
 
   const { data: events, error } = await supabase
-    .from('CalendarEvent')
+    .from('calendar_events')
     .select('*')
     .eq('userId', user.id)
     .order('startTime', { ascending: true });
